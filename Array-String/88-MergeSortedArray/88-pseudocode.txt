@@ -1,5 +1,3 @@
-
-
 #############################################################################################################################
 ================================================== 88 - MERGE SORTED ARRAY ==================================================
 #############################################################################################################################
@@ -51,6 +49,10 @@ FUNCTION merge(nums1, m, nums2, n)
 
     RETURN
 
+EXPLANATION:
+    This works because -> imagine the two possible cases:
+            CASE 1: we exhaust nums1 first, then we simply copy paste nums2
+            CASE 2: we exhaust nums2 first, then the smallest values are nums1, which are already in non-decreasing order
 
 
 
