@@ -42,6 +42,24 @@ FUNCTION removeElement(nums: List[int], val: int) -> int:
     RETURN (nums.length - good_value_list.length)
     
 
+------------------------------------------------------------------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ OPTIMAL SOLUTION $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 
+------------------------------------------------------------------------------------------------
+This solution uses two pointers: one for iterating through the array and another for keeping track of the position to overwrite with non-val elements. 
+This approach ensures the elements are removed in-place and the time complexity is O(n).
+
+FUNCTION removeElement(nums: List[int], val: int) -> int:
+
+    SET i to 0
+    
+    FOR every integer j in range of nums' length
+
+        IF nums[j] NOT EQUAL to val
+            SET nums[i] to nums[j]
+            INCREMENT i by 1
+    
+    RETURN i
+
 
 
 
