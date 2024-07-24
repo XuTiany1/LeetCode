@@ -1,20 +1,55 @@
 #############################################################################################################################
-==================================================== NAME ====================================================
+==================================================== 26 - Remove Duplicates from Sorted Array ====================================================
 #############################################################################################################################
 
 INPUT: 
-
+        An integer array nums sorted in non-decreasing order
 
 PURPOSE:
+        Remove the duplicates in-place such that each unique element appears only once
+                NOTICE -> relative order of the elemnts should be kept the same
+        
+        Change the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially. 
+        The remaining elements of nums are not important as well as the size of nums
 
+        Return k
 
 OUTPUT:
-
+        k, which reprsent the number of unique elements
 
 Example:
+Input: nums = [1,1,2]
+Output: 2, nums = [1,2,_]
+Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
 
 
 MY SOLUTION:
+
+My solution will use two pointers, one for iterating through the entire array, the other one for keeping track of where to input my number
+
+    def removeDuplicates(self, nums: List[int]) -> int:
+
+        IF (nums' length equals to zero)
+        THEN
+            RETURN zero
+
+        SET pointer to zero
+        SET unique_value to nums[0]
+
+        FOR every current_value in nums
+
+            IF (current_value does not equal to unique_value)
+            THEN
+                SET unique_value to current_value
+                nums[pointer] = unique_value
+                INCREMENT pointer
+            
+        RETURN pointer
+
+
+
+
 
 
     
