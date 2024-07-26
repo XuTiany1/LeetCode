@@ -59,12 +59,32 @@ MY SOLUTION:
 ------------------------------------------------------------------------------------------------
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ OPTIMAL SOLUTION $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 
 ------------------------------------------------------------------------------------------------
+This approach uses a two pointer solution:
+
+Use two pointers, i and j. 
+        - Pointer i will be used to keep track of the position to insert the next valid element
+        - Pointer j will traverse the array to find valid elements.
+
+# Place the element at index i if:
+        1. i < 2: to allow the first two elements of the array
+        2. nums[j] != nums[i-2]: to ensure no more than two duplicates
 
 
+def remove_duplicates(nums):
+    if not nums:
+        return 0
+    
+    i = 0  # Pointer for placement
 
-
-
-
+    for j in range(len(nums)):
+        # Place the element at index i if:
+        # 1. i < 2: to allow the first two elements of the array
+        # 2. nums[j] != nums[i-2]: to ensure no more than two duplicates
+        if i < 2 or nums[j] != nums[i - 2]:
+            nums[i] = nums[j]
+            i += 1
+    
+    return i
 
 
 
