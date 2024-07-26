@@ -37,7 +37,7 @@ My solution will use two pointers, one for iterating through the entire array, t
         SET pointer to zero
         SET unique_value to nums[0]
 
-        FOR every current_value in nums
+        FOR every current_value in nums starting from index 1
 
             IF (current_value does not equal to unique_value)
             THEN

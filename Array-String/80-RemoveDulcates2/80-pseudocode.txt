@@ -1,0 +1,162 @@
+#############################################################################################################################
+==================================================== NAME ====================================================
+#############################################################################################################################
+
+INPUT: 
+        An integer array nums sorted in non-decreasing order
+
+PURPOSE:
+        Remove some duplicates in-place such that each unique element appears at most twice. 
+        The relative order of the elements should be kept the same.
+
+        If there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. 
+        It does not matter what you leave beyond the first k elements.
+
+OUTPUT:
+        Return k after placing the final result in the first k slots of nums.
+
+Example:
+Input: nums = [0,0,1,1,1,1,2,3,3]
+Output: 7, nums = [0,0,1,1,2,3,3,_,_]
+Explanation: Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+
+MY SOLUTION:
+
+    def removeDuplicates(self, nums: List[int]) -> int:
+
+        
+        SET repeat_flag to FALSE
+        SET pointer to 0
+        SET unique_value to nums[0]
+
+        FOR every current_value in nums starting from index 1:
+
+                IF current_value does not equal to unique_value
+                THEN
+                        SET unique_value to current_value
+                        SET repeat_flag to FALSE
+                        SET nums[pointer] to be current_value
+                        INCREMENT pointer
+
+                ELSE IF repeat_flag is FALSE:
+                THEN
+                        SET repeat_flag to TRUE
+                        SET nums[pointer] to be current_value
+                        INCREMENT pointer
+        
+        RETURN pointer
+
+                                
+
+
+
+
+
+
+    
+
+------------------------------------------------------------------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ OPTIMAL SOLUTION $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
