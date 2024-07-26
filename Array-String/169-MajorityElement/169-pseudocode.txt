@@ -1,0 +1,94 @@
+#############################################################################################################################
+==================================================== NAME ====================================================
+#############################################################################################################################
+
+INPUT: 
+    An array nums of size n
+
+PURPOSE:
+    Find the majority element in the array and return it
+        The majority element is the element that appears more than ⌊n / 2⌋ times. 
+        You may assume that the majority element always exists in the array.
+
+
+OUTPUT:
+    The majority element
+
+Example:
+Input: nums = [2,2,1,1,1,2,2]
+Output: 2
+
+MY SOLUTION:
+
+    def majorityElement(self, nums: list[int]) -> int:
+
+        SET threshold to be (list/2)
+
+        INIT count_dictionary to {}, keys will be the unique numbers, value will be the count value
+
+        FOR current_value in nums:
+
+            IF current_value exists as a key in count_dictionary:
+            THEN
+                INCREMENT the corresponding value stroed in count_dictionary for the current_value
+                IF current_value >= threshold:
+                THEN
+                    RETURN current_value
+                
+            ELSE
+                INIT (current_value, 1) in count_dictionary
+
+        RETURN 0
+
+
+THIS SOLUTION IS VERY SLOW
+
+
+
+------------------------------------------------------------------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ OPTIMAL SOLUTION $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 
+------------------------------------------------------------------------------------------------
+
+
+
+This is the perfect place to use Boyer Moore Algorithm
+
+
+    def majorityElement(self, nums: list[int]) -> int:
+
+        SET candidate to NONE
+        SET count to 0
+
+        for every current_number in nums:
+
+            IF count EQUALS to 0:
+            THEN
+                SET candidate to current_number
+                INCREMENT count
+
+            ELSE IF (candidate DOES NOT EQUAL to current_number)
+            THEN
+                DECREMENT count
+
+            ELSE
+                INCREMENT count 
+
+        return count # I won't perform the checking loop given the question promises a majority element in every case
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
