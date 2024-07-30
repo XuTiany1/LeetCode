@@ -1,0 +1,80 @@
+#############################################################################################################################
+==================================================== NAME ====================================================
+#############################################################################################################################
+
+INPUT: 
+        Integer Array nums
+        Non-negative Integer k steps
+
+PURPOSE:
+        Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+
+OUTPUT:
+        Rotated array by k steps (basically shifted to the right by k steps)
+
+Example:
+Input: nums = [-1,-100,3,99], k = 2
+Output: [3,99,-1,-100]
+Explanation: 
+rotate 1 steps to the right: [99,-1,-100,3]
+rotate 2 steps to the right: [3,99,-1,-100]
+
+MY SOLUTION:
+
+I will approach this by calculating the new index of the rotated array
+
+The mathematical formula will be as follows:
+
+
+Example:
+[0, 1, 2, 3, 4]
+Length of this array is 5
+Then, shifting by 2 will be [3,4,0,1,2]
+
+Assume original index is x
+Then, the new index is calculated as new_index = (x + shift_amount) % length
+
+    def rotate(self, nums: list[int], k: int) -> None:
+
+        INIT result_array of the same size as nums
+
+        FOR every iteration i in the range of nums' size:
+
+            new_index = (i + k) % length of nums
+
+            result_array[new_index] = nums[i]
+
+        RETURN result_array
+
+
+
+
+
+
+
+
+VERSION TWO 
+
+    def rotate(self, nums: list[int], k: int) -> None:
+
+        INIT result_array of the same size as nums
+
+        SET starting_index to be (0 + k) % nums length
+
+        FOR every number in nums:
+
+            new_index = (i + k) % length of nums
+
+            result_array[starting_index] = number
+
+            starting_index++
+
+        RETURN result_array
+
+
+
+    
+
+------------------------------------------------------------------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ OPTIMAL SOLUTION $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 
+------------------------------------------------------------------------------------------------
