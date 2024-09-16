@@ -1,0 +1,93 @@
+#############################################################################################################################
+==================================================== NAME ====================================================
+#############################################################################################################################
+
+INPUT: 
+    Integer array nums
+
+PURPOSE:
+    You must write an algorithm that runs in O(n) time and without using the division operation.
+
+OUTPUT:
+    an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+
+
+Example:
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+
+
+MY SOLUTION: (THIS IS NOT RIGHT because I am using division....)
+
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+
+        INIT results array of the same size as nums
+
+        SET total_multiplication_result = every element multiplied in nums
+
+        SET counter = 0
+
+
+        FOR every int curr_int in nums:
+
+            results[counter] = total_multiplication_result/curr_int
+
+            INCREMENT counter
+        
+        ENDFOR
+
+        RETURN results
+
+    
+
+------------------------------------------------------------------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ OPTIMAL SOLUTION $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 
+------------------------------------------------------------------------------------------------
+
+
+Idea: 
+- Create two variables
+    1. curr_prefix_variable  -> stores the current product of all prefix 
+    2. curr_suffix_variable  -> stores the current product of all suffix
+
+
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+
+        INIT results_array to be of the same size as nums' length
+
+        SET curr_prefix_variable to 1
+        SET curr_suffix_variable to 1
+
+
+
+        FOR i in range(nums' length):
+
+            SET results[i] = prefix_product
+
+            SET curr_prefix_variable = curr_prefix_variable * nums[i]
+
+
+        FOR i counting backwards from nums'array:
+
+            SET results[i] = results[i] * curr_suffix_variable
+
+            SET curr_suffix_variable = curr_suffix_variable * nums[i]
+
+
+        RETURN RESULTS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
