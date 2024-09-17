@@ -1,0 +1,53 @@
+#############################################################################################################################
+==================================================== NAME ====================================================
+#############################################################################################################################
+
+INPUT: 
+    string s
+
+
+PURPOSE:
+A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+
+
+
+OUTPUT:
+    return true if it is a palindrome, or false otherwise.
+
+Example:
+Input: s = "A man, a plan, a canal: Panama"
+Output: true
+Explanation: "amanaplanacanalpanama" is a palindrome.
+
+Input: s = "race a car"
+Output: false
+Explanation: "raceacar" is not a palindrome.
+
+MY SOLUTION:
+
+
+
+    def isPalindrome(self, s: str) -> bool:
+
+        SET str into a string that is all lowercase
+
+        INIT filtered_string to empty string
+
+        FOR all curr_char in str:
+
+            IF curr_char is alpha numeric:
+                APPEND curr_char to filtered_string
+            END IF
+
+        END FOR
+
+        RETURN (filtered_string equals reverse(filtered_string))
+
+
+
+    
+
+------------------------------------------------------------------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ OPTIMAL SOLUTION $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 
+------------------------------------------------------------------------------------------------
+
