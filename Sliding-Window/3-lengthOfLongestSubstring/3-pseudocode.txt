@@ -1,0 +1,64 @@
+#############################################################################################################################
+==================================================== NAME ====================================================
+#############################################################################################################################
+
+INPUT: 
+    string s
+
+PURPOSE:
+    Given a string s, find the length of the longest substring without repeating characters.
+
+OUTPUT:
+    length of the longest substring without repeating characters
+
+Example:
+
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+
+
+
+MY SOLUTION:
+
+    def lengthOfLongestSubstring(self, s: str) -> int:
+
+        INIT latest_char_index_dictionary to {}
+
+        SET max_length = 0
+
+        SET curr_start = 0
+
+        
+        FOR end, char in enumerate(s):
+
+            IF (char is in latest_char_index_dictionary) and (latest_char_index_dictionary[char] >= curr_start)
+            THEN
+                SET curr_start = end + 1
+            
+            SET latest_char_index_dictionary[char] = end
+
+            SET max_length = MAX(max_length, end - curr_start + 1)
+
+        ENDFOR
+
+
+        RETURN max_length
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+------------------------------------------------------------------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ OPTIMAL SOLUTION $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 
+------------------------------------------------------------------------------------------------
