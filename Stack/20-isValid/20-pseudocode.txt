@@ -1,0 +1,84 @@
+#############################################################################################################################
+==================================================== NAME ====================================================
+#############################################################################################################################
+
+INPUT: 
+    string s containing just the characters '(', ')', '{', '}', '[' and ']'
+
+
+PURPOSE:
+
+An input string is valid if:
+
+    Open brackets must be closed by the same type of brackets.
+    Open brackets must be closed in the correct order.
+    Every close bracket has a corresponding open bracket of the same type.
+
+    determine if the input string is valid.
+
+OUTPUT:
+
+    True or False
+
+
+
+Example 1:
+
+Input: s = "()"
+Output: true
+
+Example 2:
+
+Input: s = "()[]{}"
+Output: true
+
+Example 3:
+
+Input: s = "(]"
+Output: false
+
+Example 4:
+
+Input: s = "([])"
+Output: true
+
+
+MY SOLUTION:
+
+
+    def isValid(self, s: str) -> bool:
+
+        SET parantheses_brackets = {')': '(' ,
+                                    ']': '[' ,
+                                    '}': '{' ,
+                                    }
+        INIT stack = []
+
+        FOR curr_char in s
+
+            IF s in parantheses_brackets
+            THEN
+                left_bracket = stack.pop
+
+                IF parantheses_brackets[left_bracket] != s
+                THEN
+                    RETURN false
+            ELSE
+                ADD s to top of stack
+
+
+        IF stack not empty
+        THEN
+            RETURN false
+
+        RETURN true
+
+
+
+
+
+    
+
+------------------------------------------------------------------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ OPTIMAL SOLUTION $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 
+------------------------------------------------------------------------------------------------

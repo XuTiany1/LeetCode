@@ -1,0 +1,61 @@
+#############################################################################################################################
+==================================================== NAME ====================================================
+#############################################################################################################################
+
+INPUT: 
+    string s
+    integer k
+
+PURPOSE:
+    choose any character of the string and 
+    change it to any other uppercase English character. 
+    You can perform this operation at most k times.
+
+OUTPUT:
+    Return the length of the longest substring 
+    containing the same letter you can get after 
+    performing the above operations.
+
+
+
+Example:
+Input: s = "ABAB", k = 2
+Output: 4
+Explanation: Replace the two 'A's with two 'B's or vice versa.
+
+Input: s = "AABABBA", k = 1
+Output: 4
+Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA".
+The substring "BBBB" has the longest repeating letters, which is 4.
+There may exists other ways to achieve this answer too.
+
+
+
+MY SOLUTION:
+    
+    def characterReplacement(self, s: str, k: int) -> int:
+
+        INIT count = {}
+        INIT max_length = 0
+
+        INIT left_pointer = 0
+
+        FOR right_pointer in len(s):
+
+            count[ character_at_right_pointer  ]  += 1
+
+            WHILE (right_pointer - left_pointer + 1) > k:
+
+                count[ left_pointer ] -= 1
+                left_pointer += 1
+            
+            max_length = max((right_pointer - left_pointer + 1), max_length)
+        
+        RETURN max_length
+
+
+    
+
+------------------------------------------------------------------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ OPTIMAL SOLUTION $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 
+------------------------------------------------------------------------------------------------
